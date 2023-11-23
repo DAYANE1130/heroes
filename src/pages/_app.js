@@ -1,9 +1,11 @@
-import HeroProvider from './context/HeroProvider';
+import HeroProvider from "@/context/HeroProvider";
+import Home from ".";
 
-function MyApp({ Component, pageProps }) {
+
+function MyApp({ pageProps }) {
   return (
     <HeroProvider>
-      <Component {...pageProps} />
+      < Home {...pageProps} />
     </HeroProvider>
   );
 }

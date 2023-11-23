@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { HeroContext } from '../context/HeroContext';
+import Card from "@/components/Card";
 
 export async function getStaticProps() {
   const result = await fetch("http://homologacao3.azapfy.com.br/api/ps/metahumans");
@@ -10,18 +13,19 @@ export async function getStaticProps() {
 }
 
 export default function Home({ heroes }) {
+
+  const { setHeroes } = useContext(HeroContext);
+
+  setHeroes(heroes);
+
   return (
     <div>
-      <h1>Esta é a página inicial</h1>
-      <p>Aqui você pode adicionar seu conteúdo específico para esta página.</p>
-      <section>
-        {heroes.map((hero) => (
-          <div key={hero.id}>
-            <h2>{hero.name}</h2>
-            <p>Gender: {hero.appearance.gender}</p>
-          </div>
+      <h2>Listagem de Heróis</h2>
+      <div>
+        {heroes.map(hero => (
+          <Card key={hero.id} hero={hero} />
         ))}
-      </section>
+      </div>
     </div>
   );
 }
