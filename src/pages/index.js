@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { HeroContext } from '../context/HeroContext';
 import Card from "@/components/Card";
+import SearchBar from "@/components/SearchBar";
 
 export async function getStaticProps() {
   const result = await fetch("http://homologacao3.azapfy.com.br/api/ps/metahumans");
@@ -14,16 +15,24 @@ export async function getStaticProps() {
 
 export default function Home({ heroes }) {
 
-  const { setHeroes } = useContext(HeroContext);
+  const { setHeroes, filteredHeroes, setFilteredHeroes } = useContext(HeroContext);
 
   setHeroes(heroes);
+
+  const handleClearSearch = () => {
+    setFilteredHeroes([])
+  }
+const heroList = filteredHeroes.length > 0 ? filteredHeroes : heroes; 
 
   return (
     <div>
       <h2>Listagem de Heróis</h2>
+      <SearchBar/>
       <div>
-        {heroes.map(hero => (
-          <Card key={hero.id} hero={hero} />
+        {heroList.map(hero => (
+          <Card key={hero.id} hero={hero} 
+          onClearSearch = {handleClearSearch}
+          />
         ))}
       </div>
     </div>
