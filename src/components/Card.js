@@ -1,15 +1,20 @@
 import Image from "next/image";
 
-export default function Card({ hero }) {
+export default function Card({ hero, onSelectHero, isSelected }) {
+  const handleSelectHero = () => {
+    onSelectHero(hero.id);
+  };
+
   return (
-    <div>
+    <div onClick={handleSelectHero}>
       <h3>{hero.name}</h3>
       <Image
-        src={hero.images.md}
-        width={220}
-        height={220}
+        src={hero.images.sm}
+        width={120}
+        height={120}
         alt={hero.name}
       />
+      {isSelected && <p>Selecionado</p>}
     </div>
   );
 }
