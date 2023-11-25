@@ -1,14 +1,17 @@
 import HeroProvider from "@/context/HeroProvider";
 import Home from ".";
-import Combat from "./Combat";
+// import { Global } from "@emotion/react";
+// import GlobalStyle from "../styles/GlobalStyle.js";
 
 
 function MyApp({ pageProps }) {
   return (
+    
+ 
     <HeroProvider>
       < Home {...pageProps} />
-      {/* <Combat {...pageProps}/> */}
     </HeroProvider>
+    
   );
 }
 

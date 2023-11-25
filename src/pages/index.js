@@ -142,6 +142,30 @@ import Card from "@/components/Card";
 import SearchBar from "@/components/SearchBar";
 import ModalCard from "@/components/Modal";
 import CardPowerstat from "@/components/CardPowerstat";
+import Link from 'next/link'
+
+import { css } from "@emotion/react";
+import {
+  Container,
+  Button,
+  IconButton,
+  Grid
+} from "@mui/material";
+import { AccountCircle } from "@mui/icons-material";
+
+
+import {
+  containerStyles,
+  headerStyles,
+  loginButtonStyles,
+  userIconStyles,
+  searchBarStyles,
+  heroListStyles,
+  cardStyles,
+  heroCardContainerStyles
+} from "../styles/index.module.js";
+import styles from "../styles/Navbar.module.css"
+
 
 export async function getStaticProps() {
   const result = await fetch("http://homologacao3.azapfy.com.br/api/ps/metahumans");
@@ -179,25 +203,100 @@ export default function Home({ heroes }) {
     }
   };
 
+  // return (
+  //   <div >
+
+  //     <SearchBar  onClearSearch={handleClearSearch} />
+  //     <div >
+   
+  //       <div>
+  //       {heroList.map((hero) => (
+  //         <Card
+  //           key={hero.id}
+  //           hero={hero}
+  //           onSelectHero={handleSelectHero}
+  //           selected={selectedHeroes.includes(hero.id)}
+  //         />
+  //       ))}
+  //       </div>
+
+  //     </div>
+  //     {modalOpen && (
+  //       <ModalCard onClose={() => setModalOpen(false)}>
+  //         <h2>O vencedor é:</h2>
+  //         <CardPowerstat hero1={heroes.find((hero) => hero.id === selectedHeroes[0])} hero2={heroes.find((hero) => hero.id === selectedHeroes[1])} />
+  //       </ModalCard>
+  //     )}
+  //   </div>
+  // );
+  // return (
+  //   <Container  css={containerStyles}>
+  
+  //     <SearchBar  css={searchBarStyles} onClearSearch={handleClearSearch} />
+
+  //     <div css={headerStyles}>
+  //       <Button variant="outlined" css={loginButtonStyles}>
+  //         Login
+  //       </Button>
+  //       <IconButton css={userIconStyles}>
+  //         <AccountCircle />
+  //       </IconButton>
+  
+  //     </div>
+
+  //     <Grid container spacing={2} css={heroListStyles}>
+  //       {heroList.map((hero) => (
+  //         <Grid item xs={12} sm={6} md={4} key={hero.id}>
+  //           <Card
+  //             css={heroCardContainerStyles}
+  //             hero={hero}
+  //             onSelectHero={handleSelectHero}
+  //             selected={selectedHeroes.includes(hero.id)}
+  //           />
+  //         </Grid>
+  //       ))}
+  //     </Grid>
+
+  //     {modalOpen && (
+  //       <ModalCard onClose={() => setModalOpen(false)}>
+  //         <h2>O vencedor é:</h2>
+  //         <CardPowerstat hero1={heroes.find((hero) => hero.id === selectedHeroes[0])} hero2={heroes.find((hero) => hero.id === selectedHeroes[1])} />
+  //       </ModalCard>
+  //     )}
+  //   </Container>
+  // );
+
+
+
   return (
-    <div>
-      <SearchBar onClearSearch={handleClearSearch} />
-      <div className="hero-list">
+    <Container css={containerStyles}>
+      <Button variant="outlined" css={loginButtonStyles}>
+        Login
+      </Button>
+      <SearchBar css={searchBarStyles} onClearSearch={handleClearSearch} />
+  
+      <Grid container spacing={2} css={heroCardContainerStyles}>
         {heroList.map((hero) => (
-          <Card
-            key={hero.id}
-            hero={hero}
-            onSelectHero={handleSelectHero}
-            selected={selectedHeroes.includes(hero.id)}
-          />
+          <Grid item xs={12} sm={6} md={4} key={hero.id}>
+            <Card
+              hero={hero}
+              onSelectHero={handleSelectHero}
+              selected={selectedHeroes.includes(hero.id)}
+            />
+          </Grid>
         ))}
-      </div>
+      </Grid>
+  
       {modalOpen && (
         <ModalCard onClose={() => setModalOpen(false)}>
           <h2>O vencedor é:</h2>
-          <CardPowerstat hero1={heroes.find((hero) => hero.id === selectedHeroes[0])} hero2={heroes.find((hero) => hero.id === selectedHeroes[1])} />
+          <CardPowerstat
+            hero1={heroes.find((hero) => hero.id === selectedHeroes[0])}
+            hero2={heroes.find((hero) => hero.id === selectedHeroes[1])}
+          />
         </ModalCard>
       )}
-    </div>
+    </Container>
   );
+  
 }
