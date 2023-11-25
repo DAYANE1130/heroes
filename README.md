@@ -1,8 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+# Project Heroes
+
+# Desafio
+
+ Foi desenvolvida uma aplicação Front-end que qu exibe uma lista de super herois onde é possivel buscar um heroi atraves do nome e ainda escolher 2 herois para iniciar um combat , onde ganha o que tive o maior somatorio de powerstats.
+
+## O que desenvolver?
+
+- Listagem de heróis
+- Filtro de heróis
+- Sistema de combate
+
+## Tecnologias Utilizadas
+
+-  ReactJS
+-  NEXT.JS
+-  Biblioteca de componentes UI (Material-UI, etc)
+-  React Context  para gerenciamento do estado global.
+
+## Iniciando a aplicação e rodando localmente
+
+Abra seu terminal e rode os seguinte comandos:
 
 ```bash
 npm run dev
@@ -14,39 +33,10 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-# Desafio
-
-Queremos convidá-lo(a) a fazer parte desta jornada de transformação. Nosso desafio é simples: desenvolver uma aplicação web que abrace a temática de heróis e, ao mesmo tempo, seja a plataforma perfeita para você demonstrar todo o seu talento em desenvolvimento frontend e criatividade.
-
-## O que desenvolver?
-
-- Listagem de heróis
-- Filtro de heróis
-- Sistema de combate
-
-## Requisitos
-
-- Desenvolver a aplicação em ReactJS
-- Utilizar alguma biblioteca de componentes UI (Material-UI, etc)
-  - Usei: React Context e NEXT.JS
-
-## Itens a serem avaliados
-
-- Estrutura do projeto/código
-- Boas práticas da linguagem/framework
-- Bibliotecas utilizadas
-- Estilização
-- Funcionalidades do sistema
-
-## Extra
-
-*Os itens a seguir não são obrigatórios, mas um bônus*:
-- NextJS
-- Atomic Design
+Abra seu navegador para ver o resultado  [http://localhost:3000](http://localhost:3000) 
 
 ## Ferramentas para o desafio
+Api fornecida para resolução do desafio:
 
 **API**: [http://homologacao3.azapfy.com.br/api/ps/metahumans](http://homologacao3.azapfy.com.br/api/ps/metahumans)
 
