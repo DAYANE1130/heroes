@@ -7,6 +7,8 @@ export default function HeroProvider({ children }) {
   const [filteredHeroes, setFilteredHeroes] = useState([]);
   const [selectedHeroes, setSelectedHeroes] = useState([]);
 
+ 
+
   const contextValues = {
     heroes,
     setHeroes,
