@@ -16,21 +16,42 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+# Desafio
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Queremos convidá-lo(a) a fazer parte desta jornada de transformação. Nosso desafio é simples: desenvolver uma aplicação web que abrace a temática de heróis e, ao mesmo tempo, seja a plataforma perfeita para você demonstrar todo o seu talento em desenvolvimento frontend e criatividade.
 
-## Learn More
+## O que desenvolver?
 
-To learn more about Next.js, take a look at the following resources:
+- Listagem de heróis
+- Filtro de heróis
+- Sistema de combate
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Requisitos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Desenvolver a aplicação em ReactJS
+- Utilizar alguma biblioteca de componentes UI (Material-UI, etc)
+  - Usei: React Context e NEXT.JS
 
-## Deploy on Vercel
+## Itens a serem avaliados
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Estrutura do projeto/código
+- Boas práticas da linguagem/framework
+- Bibliotecas utilizadas
+- Estilização
+- Funcionalidades do sistema
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Extra
+
+*Os itens a seguir não são obrigatórios, mas um bônus*:
+- NextJS
+- Atomic Design
+
+## Ferramentas para o desafio
+
+**API**: [http://homologacao3.azapfy.com.br/api/ps/metahumans](http://homologacao3.azapfy.com.br/api/ps/metahumans)
+
+**Dados**:
+A API fornece uma lista de heróis que inclui uma variedade de informações, como raça, atributos, origem, imagens e muito mais.
+
+👉 **Exemplos**:
+Neste sistema, há uma lista de heróis que podem ser filtrados pelo nome no canto superior direito. O sistema de combate é simples: basta clicar em dois heróis e um modal aparece informando o vencedor. A vitória é do herói com o maior somatório de powerstats.
